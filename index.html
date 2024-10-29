@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumindo API GraphQL</title>
+</head>
+<body>
+    <h1>Personagens de Bleach</h1>
+    <div id="results"></div>
+
+    <script>
+        async function fetchGraphQLData() {
+            const query = `
+                query {
+                    characters(name: "Ichigo Kurosaki") {
+                        name
+                        race
+                        affiliation
+                        abilities {
+                            name
+                            description
+                        }
+                    }
+                }
+            `;
+
+            const response = await fetch("https://graphql.anilist.co", { // ou outra URL da API GraphQL pública
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ query })
+            });
+
+            const { data } = await response.json();
+            document.getElementById("results").innerText = JSON.stringify(data, null, 2);
+        }
+
+        fetchGraphQLData();
+    </script>
+</body>
+</html>

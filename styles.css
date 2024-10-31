@@ -1,6 +1,6 @@
+/*v2*/
 /* Importa a fonte "Press Start 2P" do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 /* Reseta margens, preenchimentos e define box-sizing para todos os elementos */
 * {
   margin: 0; /* Remove a margem padrão */

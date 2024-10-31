@@ -21,19 +21,6 @@
   --footer-color: #9b9b9b; /* Cor do texto do rodapé */
 }
 
-/* Cores padronizadas para o tema padrão */
-.dark-theme {
-  --bg-color: #282c34; /* Cor de fundo da página */
-  --text-color: #ffffff; /* Cor do texto */
-  --header-bg: #61dafb; /* Cor de fundo do cabeçalho */
-  --border-color: #ffffff; /* Cor da borda */
-  --panel-bg: #3b3f47; /* Cor de fundo dos painéis */
-  --hover-bg: #61dafb; /* Cor de fundo do botão ao passar o mouse */
-  --title-color: #ffffff; /* Cor do texto dos títulos */
-  --display-bg: #444950; /* Cor de fundo dos displays */
-  --footer-color: #cccccc; /* Cor do texto do rodapé */
-}
-
 /* Estilos para o corpo da página */
 body {
   font-family: 'Press Start 2P', cursive; /* Define a fonte da página */
@@ -146,7 +133,7 @@ footer {
 /* Estilos do botão flutuante */
 #themeButton {
   position: fixed; /* Botão flutuante */
-  top: 20px; /* Distância do topo */
+  bottom: 20px; /* Distância do fundo */
   right: 20px; /* Distância da direita */
   background-color: var(--border-color); /* Cor do botão */
   color: var(--text-color); /* Cor do texto do botão */

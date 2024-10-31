@@ -19,21 +19,6 @@
   --title-color: #a96e3e; /* Cor do texto dos títulos */
   --display-bg: #f3e6d3; /* Cor de fundo dos displays */
   --footer-color: #9b9b9b; /* Cor do texto do rodapé */
-  --button-text-color: #3c3c3c; /* Cor do texto do botão no tema claro */
-}
-
-/* Cores padronizadas para o tema padrão */
-.dark-theme {
-  --bg-color: #282c34; /* Cor de fundo da página */
-  --text-color: #ffffff; /* Cor do texto */
-  --header-bg: #61dafb; /* Cor de fundo do cabeçalho */
-  --border-color: #ffffff; /* Cor da borda */
-  --panel-bg: #3b3f47; /* Cor de fundo dos painéis */
-  --hover-bg: #61dafb; /* Cor de fundo do botão ao passar o mouse */
-  --title-color: #ffffff; /* Cor do texto dos títulos */
-  --display-bg: #444950; /* Cor de fundo dos displays */
-  --footer-color: #cccccc; /* Cor do texto do rodapé */
-  --button-text-color: #444950; /* Cor do texto do botão no tema escuro */
 }
 
 /* Estilos para o corpo da página */
@@ -85,14 +70,12 @@ select, input[type="text"], button {
   border-radius: 5px; /* Arredonda os cantos */
   border: none; /* Remove a borda padrão */
   transition: background-color 0.3s ease; /* Animação suave na mudança de cor de fundo */
-  background-color: var(--panel-bg); /* Cor de fundo */
-  color: var(--text-color); /* Cor do texto */
 }
 
 /* Estilos específicos para botões */
 button {
   background-color: var(--border-color); /* Cor de fundo do botão */
-  color: var(--button-text-color); /* Cor do texto do botão */
+  color: var(--text-color); /* Cor do texto do botão */
   cursor: pointer; /* Muda o cursor ao passar sobre o botão */
   font-weight: bold; /* Texto em negrito */
 }
@@ -150,7 +133,7 @@ footer {
 /* Estilos do botão flutuante */
 #themeButton {
   position: fixed; /* Botão flutuante */
-  top: 20px; /* Distância do topo */
+  bottom: 20px; /* Distância do fundo */
   right: 20px; /* Distância da direita */
   background-color: var(--border-color); /* Cor do botão */
   color: var(--text-color); /* Cor do texto do botão */
@@ -166,18 +149,4 @@ footer {
 /* Efeito hover para o botão flutuante */
 #themeButton:hover {
   background-color: var(--hover-bg); /* Muda a cor ao passar o mouse */
-}
-
-/* Estilos para caixas de seleção e campos de texto */
-select, input[type="text"] {
-  background-color: var(--panel-bg); /* Cor de fundo das caixas de seleção e campos de texto */
-  color: var(--text-color); /* Cor do texto das caixas de seleção e campos de texto */
-  border: 1px solid var(--border-color); /* Borda das caixas de seleção e campos de texto */
-}
-
-/* Estilos para o tema escuro (RPG) */
-.dark-theme select, .dark-theme input[type="text"] {
-  background-color: var(--panel-bg); /* Cor de fundo das caixas de seleção e campos de texto no tema escuro */
-  color: var(--text-color); /* Cor do texto das caixas de seleção e campos de texto no tema escuro */
-  border: 1px solid var(--border-color); /* Borda das caixas de seleção e campos de texto no tema escuro */
 }

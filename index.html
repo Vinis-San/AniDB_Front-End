@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consumindo API GraphQL</title>
+    <button id="themeButton">🌙</button>
+    <title>Conjurador de Verbos - Aventura Linguística</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Personagens de Bleach</h1>
-    <div id="results"></div>
+    <header>
+        <h1>Conjurador de Verbos</h1>
+        <h2>Aventura Linguística - Mestre da Conjugação</h2>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="left-panel">
+                <h3>Seleção de Idioma e Verbo</h3>
+                <label for="original-language">Língua Original:</label>
+                <select id="original-language">
+                    <option value="portuguese">Português</option>
+                    <option value="english">Inglês</option>
+                    <option value="french">Francês</option>
+                </select>
 
-    <script>
-        async function fetchGraphQLData() {
-            const query = `
-                query {
-                    characters(name: "Ichigo Kurosaki") {
-                        name
-                        race
-                        affiliation
-                        abilities {
-                            name
-                            description
-                        }
-                    }
-                }
-            `;
-
-            const response = await fetch("https://graphql.anilist.co", { // ou outra URL da API GraphQL pública
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ query })
-            });
-
-            const { data } = await response.json();
-            document.getElementById("results").innerText = JSON.stringify(data, null, 2);
-        }
-
-        fetchGraphQLData();
-    </script>
+                <label for="verb-input">Verbo:</label>
+                <input type="text" id="verb-input" placeholder="Digite um verbo" required>
+                
+                <button id="conjure-btn">Conjurar</button> <!-- Botão para conjugar o verbo -->
+            </div>
+            
+            <div class="right-panel">
+                <h3>Conjugação e Tradução</h3>
+                <div id="translation-display"></div> <!-- Área para exibir tradução -->
+                <div id="conjugation-display"></div> <!-- Área para exibir conjugação -->
+            </div>
+        </div>
+        
+        <div id="verb-table-container">
+           <!---<h3>Lista de Verbos</h3>-->
+            <table id="verb-table">
+                <thead>
+                    <tr>
+                        <th>Português</th>
+                        <th>Inglês</th>
+                        <th>Francês</th>
+                    </tr>
+                </thead>
+                <tbody id="verb-table-body">
+                    <!-- As linhas dos verbos serão inseridas aqui via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <footer>
+        <!--<p>Status: Em desenvolvimento</p>-->
+    </footer>
+    <script src="DATAVerbs.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

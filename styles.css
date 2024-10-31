@@ -18,7 +18,7 @@
   --hover-bg: #d9b68c; /* Cor de fundo do botão ao passar o mouse */
   --title-color: #a96e3e; /* Cor do texto dos títulos */
   --display-bg: #f3e6d3; /* Cor de fundo dos displays */
-  --footer-color: #9b9b9b; /* Cor do texto do rodapé */
+  --footer-color: #ff0000; /* Cor do texto do rodapé */
   --button-text-color: #3c3c3c; /* Cor do texto do botão no tema claro */
 }
 
@@ -34,6 +34,7 @@
   --display-bg: #444950; /* Cor de fundo dos displays */
   --footer-color: #cccccc; /* Cor do texto do rodapé */
   --button-text-color: #444950; /* Cor do texto do botão no tema escuro */
+  font-family: 'Roboto Mono', monospace; /* Fonte para o tema escuro */
 }
 
 /* Estilos para o corpo da página */
@@ -110,14 +111,15 @@ button:hover {
   border-radius: 5px; /* Arredonda os cantos */
   color: var(--text-color); /* Cor do texto */
   font-size: 14px; /* Tamanho da fonte */
+  overflow-x: auto;
 }
 
 /* Estilo da tabela de verbos */
 #verb-table-container {
   margin-top: 20px; /* Margem superior do contêiner da tabela */
-  max-height: 500px; /* Define a altura máxima do contêiner */
   display: flex;
   justify-content: center;
+  flex: auto;
 }
 
 /* Estilos para a tabela de verbos */
@@ -145,6 +147,7 @@ footer {
   margin-top: 20px; /* Margem superior do rodapé */
   color: var(--footer-color); /* Cor do texto do rodapé */
   font-size: 0.8em; /* Tamanho da fonte do rodapé */
+  margin-bottom: 20px;
 }
 
 /* Estilos do botão flutuante */
@@ -182,41 +185,71 @@ select, input[type="text"] {
   border: 1px solid var(--border-color); /* Borda das caixas de seleção e campos de texto no tema escuro */
 }
 
+.left-panel h3, .right-panel h3, .ver-table-container h3 {
+  font-size: 1.2em; /* Diminui o tamanho do título */
+  color: var(--title-color);
+}
+
+/* Centraliza cabeçalhos da tabela */
+#verb-table th {
+  background-color: var(--display-bg);
+  text-align: center;
+}
 
 
-/* Estilo para dispositivos móveis */
+
+
+
+
+
+
+
+/* Configurações gerais para dispositivos móveis */
 @media (max-width: 768px) {
-    .container {
-      flex-direction: column; /* Muda o layout para coluna em telas menores */
-      width: 90%; /* Largura do contêiner */
-      margin: 20px auto; /* Margem automática */
-    }
-  
-    .left-panel, .right-panel {
-      width: 100%; /* Os painéis ocupam toda a largura */
-      margin-bottom: 20px; /* Espaço entre os painéis */
-    }
-  
-    #verb-table {
-      width: 100%; /* A tabela ocupa toda a largura do contêiner */
-    }
-  
-    #themeButton {
-      width: 40px; /* Largura menor para dispositivos móveis */
-      height: 40px; /* Altura menor para dispositivos móveis */
-      font-size: 20px; /* Tamanho da fonte menor para o botão */
-    }
-  
-    h1 {
-      font-size: 24px; /* Tamanho da fonte do título maior */
-    }
-  
-    h2 {
-      font-size: 18px; /* Tamanho da fonte do subtítulo maior */
-    }
-  
-    h3 {
-      font-size: 16px; /* Tamanho da fonte dos títulos dos painéis */
-    }
+  /* Tabela com barra de rolagem horizontal */
+  #verb-table-container {
+      overflow-x: auto;
+      max-width: 100%;
   }
+
+  #verb-table th, #verb-table td {
+      min-width: 100px; /* Largura mínima das colunas para rolagem */
+      padding: 8px;
+  }
+
+  /* Campo de inserção de verbo */
+  #verb-input {
+      width: 100%;
+      max-width: 250px;
+      font-size: 0.9em; /* Reduzindo o tamanho da fonte */
+      padding: 6px;
+  }
+
+  /* Painel de tradução e conjugação */
+  #translation-display, #conjugation-display {
+      font-size: 0.85em;
+      line-height: 1.4;
+      font-family: Arial, sans-serif; /* Alternativa mais suave e menos pixelada */
+  }
+
+  /* Painel esquerdo e direito para ajustar tamanho e alinhamento */
+  .left-panel, .right-panel {
+      padding: 10px;
+  }
+}
+
+/* Barra de rolagem personalizada */
+#verb-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+#verb-table-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Cor da barra */
+  border-radius: 4px;
+}
+
+#verb-table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cor da barra ao passar o mouse */
+}
+
   

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>Biblioteca de Livros</title>
+</head>
+<body>
+    <header>
+        <h1>Biblioteca de Livros</h1>
+        <h2>Encontre histórias simples</h2>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="english">Inglês</button>
+            <button class="tab-button" data-tab="french">Francês</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar livros...">
+            <select id="languageFilter">
+                <option value="">Todos os idiomas</option>
+                <option value="en">Inglês</option>
+                <option value="fr">Francês</option>
+            </select>
+            <label for="downloadable">Somente baixáveis:</label>
+            <input type="checkbox" id="downloadable">
+            <button id="searchButton">Buscar</button>
+        </div>
+
+        <div id="bookList" class="book-list"></div>
+    </main>
+
+    <footer>
+        <div class="button-container">
+            <a href="index.html" class="main-button">Home</a>
+        </div>
+        <p>&copy; 2024 Biblioteca de Livros - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="index3.js"></script>
+</body>
+</html>

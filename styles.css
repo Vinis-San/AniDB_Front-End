@@ -181,3 +181,42 @@ select, input[type="text"] {
   color: var(--text-color); /* Cor do texto das caixas de seleção e campos de texto no tema escuro */
   border: 1px solid var(--border-color); /* Borda das caixas de seleção e campos de texto no tema escuro */
 }
+
+
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Muda o layout para coluna em telas menores */
+      width: 90%; /* Largura do contêiner */
+      margin: 20px auto; /* Margem automática */
+    }
+  
+    .left-panel, .right-panel {
+      width: 100%; /* Os painéis ocupam toda a largura */
+      margin-bottom: 20px; /* Espaço entre os painéis */
+    }
+  
+    #verb-table {
+      width: 100%; /* A tabela ocupa toda a largura do contêiner */
+    }
+  
+    #themeButton {
+      width: 40px; /* Largura menor para dispositivos móveis */
+      height: 40px; /* Altura menor para dispositivos móveis */
+      font-size: 20px; /* Tamanho da fonte menor para o botão */
+    }
+  
+    h1 {
+      font-size: 24px; /* Tamanho da fonte do título maior */
+    }
+  
+    h2 {
+      font-size: 18px; /* Tamanho da fonte do subtítulo maior */
+    }
+  
+    h3 {
+      font-size: 16px; /* Tamanho da fonte dos títulos dos painéis */
+    }
+  }
+  

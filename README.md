@@ -1,85 +1,74 @@
-*Conjurador de Verbos - Tema RPG*
+# Conjurador de Verbos - Aventura Linguística
 
-Conjurador de Verbos: Aventura Linguística - Mestre da Conjugação
+![Conjurador de Verbos](https://link-para-uma-imagem/banner.jpg) <!-- Substitua pelo link da imagem se houver -->
 
-Descrição:
-Um webaplicativo mágico que ajuda conjuradores de palavras a dominarem a arte da conjugação de verbos em diferentes línguas.
+O **Conjurador de Verbos** é um webaplicativo interativo que auxilia conjuradores de palavras a dominarem a arte da conjugação de verbos em diferentes línguas. Com temas inspiradores como RPG e Cruzadas, o aplicativo transforma a conjugação de verbos em uma experiência envolvente e educativa.
 
-Funcionalidades:
+## 🎨 Temas Disponíveis
 
-- Seleção de língua original e destino
-- Campo de entrada para verbo
-- Botão "Conjurar" para gerar conjugações
-- Duas tabelas para exibir conjugações na língua original e destino
+1. **Tema RPG** - *Mestre da Conjugação*:  
+   Interface mística que transporta o usuário para uma aventura mágica de aprendizado.
+   
+2. **Tema Cruzadas** - *Defensores da Linguagem*:  
+   Visual inspirado nas cruzadas, com foco em precisão e maestria da linguagem.
 
-Tecnologias:
+> **Troca de Temas**: O usuário pode alternar entre os temas clicando no ícone no canto superior direito, onde o sol representa o modo claro e a lua o modo escuro.
 
-- Front-end: HTML, CSS, JavaScript
-- API de conjugação de verbos (gratuita)
-- Possível integração com bibliotecas como WordNet ou Datamuse
+---
 
-Requisitos:
+## ⚙️ Funcionalidades
 
-- Interface responsiva para dispositivos móveis e desktop
-- Suporte a múltiplas línguas
-- Conjugações precisas e atualizadas
+- **Seleção de Idioma Original e Destino**: Escolha entre Português, Inglês e Francês para conjugar e traduzir.
+- **Entrada de Verbo Personalizável**: Campo de inserção de verbos para conjugação em tempo real.
+- **Botão “Conjurar”**: Gera a conjugação e tradução instantaneamente para o verbo inserido.
+- **Tabelas de Conjugação e Tradução**: Exibe conjugações detalhadas e tradução para as línguas selecionadas.
+- **Níveis e Progressão** *(em desenvolvimento)*:
+  - Sistema de gamificação onde os usuários avançam conforme realizam conjugações com sucesso.
 
-Objetivo:
+---
 
-- Auxiliar estudantes e tradutores na conjugação de verbos em diferentes línguas.
+## 🛠️ Tecnologias
 
-Status: Em desenvolvimento
+- **Front-End**: HTML, CSS, JavaScript
+- **Fontes e Estilização**: Integração com *Roboto Mono* para o modo escuro.
+- **API de Conjugação de Verbos** *(em desenvolvimento)*: Provedores de conjugação para acesso gratuito e preciso.
+- **Bibliotecas Planejadas**: Integração futura com [WordNet](https://wordnet.princeton.edu/) ou [Datamuse](https://www.datamuse.com/) para aprimorar a precisão das traduções.
 
-Contribuições: Bem-vindas!
+---
 
-Ideias Futuras:
+## 📱 Requisitos
 
-- Níveis e Progressão:
-    - Nível 1: Iniciante (conjugar 3 verbos regulares)
-    - Nível 2: Aprendiz (conjugar 5 verbos irregulares)
-    - Nível 3: Mestre (conjugar 10 verbos em diferentes tempos e modos)
-    - Nível 4: Conjurador (conjugar 20 verbos em diferentes tempos e modos)
-- Guardar Informação: utilizando conta do Google do usuário com Firebase Realtime Database ou Google Sheets.
+- **Interface Responsiva**: Compatível com dispositivos móveis e desktop, incluindo barra de rolagem em tabelas e layout dinâmico.
+- **Suporte a Múltiplas Línguas**: Atualizado para conjugação em Português, Inglês e Francês.
+- **Modo Escuro e Claro**: Alternância simplificada de temas para melhorar a experiência do usuário.
 
-*Conjurador de Verbos - Tema Cruzadas*
+---
 
-Conjurador de Verbos: Defensores da Linguagem
+## 🏆 Estrutura de Progressão *(planejada)*
 
-Descrição:
-Um webaplicativo inspirado nas Cruzadas que ajuda defensores da linguagem a dominarem a arte da conjugação de verbos em diferentes línguas.
+- **Nível 1**: Iniciante - Conjugue 3 verbos regulares.
+- **Nível 2**: Aprendiz - Conjugue 5 verbos irregulares.
+- **Nível 3**: Mestre - Conjugue 10 verbos em diferentes tempos e modos.
+- **Nível 4**: Conjurador - Conjugue 20 verbos em diferentes tempos e modos.
 
-Funcionalidades:
+---
 
-- Seleção de língua original e destino
-- Campo de entrada para verbo
-- Botão "Conjurar" para gerar conjugações
-- Duas tabelas para exibir conjugações na língua original e destino
+## 🤝 Como Contribuir
 
-Tecnologias:
+Contribuições são bem-vindas! Se você deseja expandir funcionalidades, corrigir bugs ou adicionar novos temas, sinta-se à vontade para enviar um pull request. Para grandes mudanças, abra um *issue* primeiro para discutir o que você gostaria de mudar.
 
-- Front-end: HTML, CSS, JavaScript
-- API de conjugação de verbos (gratuita)
-- Possível integração com bibliotecas como WordNet ou Datamuse
+---
 
-Requisitos:
+## 📌 Status do Projeto
 
-- Interface responsiva para dispositivos móveis e desktop
-- Suporte a múltiplas línguas
-- Conjugações precisas e atualizadas
+Em desenvolvimento. Novas funcionalidades e melhorias são adicionadas regularmente.
 
-Objetivo:
+---
 
-- Auxiliar estudantes e tradutores na conjugação de verbos em diferentes línguas.
+## 📄 Licença
 
-Status: Em desenvolvimento
+Este projeto é de código aberto e distribuído sob a [Licença MIT](LICENSE).
 
-Contribuições: Bem-vindas!
+---
 
-Ideias Futuras:
-
-- Níveis e Progressão:
-    - Nível 1: Noviço (conjugar 3 verbos regulares)
-    - Nível 2: Cavaleiro (conjugar 5 verbos irregulares)
-    - Nível 3: Mestre (conjugar 10 verbos em diferentes tempos e modos)
-    - Nível 4: Defensor (conjugar 20 verbos em diferentes tempos e modos)
-- Guardar Informação: utilizando conta do Google do usuário com Firebase Realtime Database ou Google Sheets.
+Desenvolvido com 💙 pela equipe *Conjurador de Verbos*.

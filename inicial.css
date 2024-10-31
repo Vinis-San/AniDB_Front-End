@@ -1,0 +1,87 @@
+/* Estilos para o modo claro */
+:root {
+    --bg-color: #f4f4f4; /* Cor de fundo do corpo */
+    --text-color: #333; /* Cor do texto */
+    --header-bg: #007bff; /* Cor de fundo do cabeçalho */
+    --header-text: white; /* Cor do texto do cabeçalho */
+    --section-bg: #ffffff; /* Cor de fundo das seções */
+    --section-shadow: rgba(0, 0, 0, 0.1); /* Sombra da seção */
+    --button-bg: #007bff; /* Cor de fundo do botão */
+    --button-hover-bg: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+    --footer-bg: #007bff; /* Cor de fundo do rodapé */
+    --footer-text: white; /* Cor do texto do rodapé */
+}
+
+/* Estilos para o modo escuro */
+.dark-theme {
+    --bg-color: #181818; /* Cor de fundo do corpo no modo escuro */
+    --text-color: #eaeaea; /* Cor do texto no modo escuro */
+    --header-bg: #007bff; /* Cor de fundo do cabeçalho */
+    --header-text: white; /* Cor do texto do cabeçalho no modo escuro */
+    --section-bg: #282828; /* Cor de fundo das seções no modo escuro */
+    --section-shadow: rgba(255, 255, 255, 0.1); /* Sombra da seção no modo escuro */
+    --button-bg: #007bff; /* Cor de fundo do botão no modo escuro */
+    --button-hover-bg: #0056b3; /* Cor de fundo do botão ao passar o mouse no modo escuro */
+    --footer-bg: #007bff; /* Cor de fundo do rodapé no modo escuro */
+    --footer-text: white; /* Cor do texto do rodapé no modo escuro */
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg-color); /* Usa a cor de fundo definida pelas variáveis */
+    color: var(--text-color); /* Usa a cor do texto definida pelas variáveis */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--header-bg); /* Cor de fundo do cabeçalho */
+    color: var(--header-text); /* Cor do texto do cabeçalho */
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--section-bg); /* Cor de fundo das seções */
+    box-shadow: 0 0 10px var(--section-shadow); /* Sombra da seção */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-bg); /* Cor de fundo do botão */
+    color: var(--header-text); /* Cor do texto do botão */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.main-button:hover {
+    background-color: var(--button-hover-bg); /* Cor do botão ao passar o mouse */
+}
+
+/* Estilos para o rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--footer-bg); /* Cor de fundo do rodapé */
+    color: var(--footer-text); /* Cor do texto do rodapé */
+}

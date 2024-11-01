@@ -14,13 +14,8 @@
     </header>
 
     <main>
-        <div class="tabs">
-            <button class="tab-button active" data-tab="english">Inglês</button>
-            <button class="tab-button" data-tab="french">Francês</button>
-        </div>
-
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar livros...">
+            <input type="text" id="searchInput" placeholder="Buscar livros..." oninput="suggestBooks()">
             <select id="languageFilter">
                 <option value="">Todos os idiomas</option>
                 <option value="en">Inglês</option>
@@ -32,14 +27,19 @@
         </div>
 
         <div id="bookList" class="book-list"></div>
-    </main>
 
-    <footer>
-        <div class="button-container">
-            <a href="index.html" class="main-button">Home</a>
+        <!-- Modal para exibir detalhes do livro -->
+        <div id="bookModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3 id="modalTitle"></h3>
+                <img id="modalCover" alt="Capa do Livro">
+                <p id="modalAuthor"></p>
+                <p id="modalDescription"></p>
+                <button id="modalDownloadButton">Baixar</button>
+            </div>
         </div>
-        <p>&copy; 2024 Biblioteca de Livros - Todos os direitos reservados.</p>
-    </footer>
+    </main>
 
     <script src="index3.js"></script>
 </body>

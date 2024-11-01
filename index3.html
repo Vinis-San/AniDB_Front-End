@@ -14,32 +14,20 @@
     </header>
 
     <main>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar livros..." oninput="suggestBooks()">
-            <select id="languageFilter">
-                <option value="">Todos os idiomas</option>
-                <option value="en">Inglês</option>
-                <option value="fr">Francês</option>
-            </select>
-            <label for="downloadable">Somente baixáveis:</label>
-            <input type="checkbox" id="downloadable">
-            <button id="searchButton">Buscar</button>
-        </div>
-
         <div id="bookList" class="book-list"></div>
-
-        <!-- Modal para exibir detalhes do livro -->
-        <div id="bookModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h3 id="modalTitle"></h3>
-                <img id="modalCover" alt="Capa do Livro">
-                <p id="modalAuthor"></p>
-                <p id="modalDescription"></p>
-                <button id="modalDownloadButton">Baixar</button>
-            </div>
-        </div>
+        <div id="bookTips" class="book-tips"></div>
     </main>
+
+    <footer>
+        <div class="footer-column">
+            <p>&copy; 2024 Biblioteca de Livros - Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-column"></div> <!-- Coluna vazia para manter a estrutura -->
+        <div class="footer-column">
+            <h3>Quem Somos</h3>
+            <p>Somos um grupo de entusiastas da literatura que busca compartilhar conhecimento e incentivar a leitura.</p>
+        </div>
+    </footer>
 
     <script src="index3.js"></script>
 </body>

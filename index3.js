@@ -1,89 +1,58 @@
 const bookListContainer = document.getElementById("bookList");
-const searchInput = document.getElementById("searchInput");
-const languageFilter = document.getElementById("languageFilter");
-const downloadableFilter = document.getElementById("downloadable");
-const bookModal = document.getElementById("bookModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalCover = document.getElementById("modalCover");
-const modalAuthor = document.getElementById("modalAuthor");
-const modalDescription = document.getElementById("modalDescription");
-const modalDownloadButton = document.getElementById("modalDownloadButton");
+const bookTipsContainer = document.getElementById("bookTips");
+let currentPage = 1;
+const pageSize = 16; // Exibindo inicialmente 16 livros
 
-// Função principal para buscar livros de cada idioma ao carregar a página
-async function fetchInitialBooks() {
-    await fetchBooks('', 'en');
-    await fetchBooks('', 'fr');
+// Função para buscar livros em francês automaticamente
+async function fetchInitialFrenchBooks() {
+    const url = `https://openlibrary.org/subjects/french.json?limit=${pageSize}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.works;
 }
 
-// Função para buscar livros com parâmetros opcionais
-async function fetchBooks(query = '', language = '') {
-    let url = `https://openlibrary.org/search.json?limit=20${query ? `&q=${encodeURIComponent(query)}` : ''}`;
-    if (language) url += `&language=${language === 'en' ? 'eng' : 'fre'}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        displayBooks(data.docs, language);
-    } catch (error) {
-        console.error('Erro ao buscar livros:', error);
-    }
-}
-
-// Função para exibir os livros na tela
-function displayBooks(books, language) {
+// Exibe os livros na tela
+function displayBooks(books) {
     books.forEach(book => {
         const bookItem = document.createElement('div');
-        bookItem.className = `book-item ${language}`;
-        bookItem.onclick = () => openModal(book);
-        
-        const coverImage = book.cover_i 
-            ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` 
-            : 'https://via.placeholder.com/60x90?text=No+Cover';
-
+        bookItem.className = 'book-item';
         bookItem.innerHTML = `
-            <img src="${coverImage}" alt="Capa do livro">
-            <div>
-                <h3>${book.title}</h3>
-                <p>Autor: ${book.author_name ? book.author_name.join(', ') : 'Autor desconhecido'}</p>
-                <p>${book.ebook_count_i > 0 ? '<strong>Disponível para download</strong>' : 'Não disponível'}</p>
-            </div>
+            <h3>${book.title}</h3>
+            <p>Autor: ${book.authors ? book.authors[0].name : 'Desconhecido'}</p>
+            <a href="https://www.google.com/search?tbm=shop&q=${encodeURIComponent(book.title)}" target="_blank">Comprar</a>
         `;
         bookListContainer.appendChild(bookItem);
     });
 }
 
-// Sugestões em tempo real
-function suggestBooks() {
-    const query = searchInput.value;
-    const language = languageFilter.value;
-    fetchBooks(query, language);
+// Carrega os livros iniciais em francês ao carregar a página
+async function loadInitialFrenchBooks() {
+    const books = await fetchInitialFrenchBooks();
+    displayBooks(books);
 }
 
-// Função para abrir o modal com detalhes do livro
-function openModal(book) {
-    modalTitle.textContent = book.title;
-    modalCover.src = book.cover_i 
-        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
-        : 'https://via.placeholder.com/150x225?text=No+Cover';
-    modalAuthor.textContent = `Autor: ${book.author_name ? book.author_name.join(', ') : 'Desconhecido'}`;
-    modalDescription.textContent = book.first_sentence ? book.first_sentence[0] : 'Sem descrição disponível';
-    modalDownloadButton.onclick = () => alert(`Baixando ${book.title}...`);
-    bookModal.style.display = 'block';
+// Exibe dicas de livros
+function displayBookTips() {
+    const tips = [
+        { title: "Livraria Cultura", link: "https://www.livrariacultura.com.br/", description: "Encontre uma vasta seleção de livros!" },
+        { title: "Saraiva", link: "https://www.saraiva.com.br/", description: "Aproveite as ofertas imperdíveis!" },
+        { title: "Leia Clássicos", link: "https://www.livrariacultura.com.br/", description: "Explore clássicos franceses como 'Le Petit Prince'!" }
+    ];
+
+    tips.forEach(tip => {
+        const tipItem = document.createElement('div');
+        tipItem.className = 'tip-item';
+        tipItem.innerHTML = `
+            <h4>${tip.title}</h4>
+            <p>${tip.description}</p>
+            <a href="${tip.link}" target="_blank">Saiba mais</a>
+        `;
+        bookTipsContainer.appendChild(tipItem);
+    });
 }
 
-// Fechar o modal
-function closeModal() {
-    bookModal.style.display = 'none';
-}
-
-// Configurações para o botão de busca
-document.getElementById("searchButton").addEventListener("click", () => {
-    const query = searchInput.value;
-    const language = languageFilter.value;
-    const downloadableOnly = downloadableFilter.checked;
-    bookListContainer.innerHTML = ''; // Limpa a lista para nova busca
-    fetchBooks(query, language, downloadableOnly);
-});
-
-// Carrega os livros automaticamente ao carregar a página
-fetchInitialBooks();
+// Inicializa a página
+window.onload = function() {
+    loadInitialFrenchBooks();
+    displayBookTips();
+};
